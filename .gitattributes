@@ -1,0 +1,45 @@
+# Set default behavior to automatically normalize line endings to LF
+* text=auto eol=lf
+
+# Explicit text files
+*.md text
+*.txt text
+*.py text diff=python
+*.ts text
+*.tsx text
+*.js text
+*.jsx text
+*.json text
+*.yml text
+*.yaml text
+*.toml text
+*.sh text eol=lf
+*.sql text
+*.html text
+*.css text
+
+# Git configuration files
+.gitignore text
+.gitattributes text
+
+# DVC files
+*.dvc text
+dvc.yaml text
+dvc.lock text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.pt binary
+*.pth binary
+*.ckpt binary
+*.tif binary
+*.tiff binary
+*.nc binary
+*.h5 binary
+*.zip binary
+*.tar.gz binary
