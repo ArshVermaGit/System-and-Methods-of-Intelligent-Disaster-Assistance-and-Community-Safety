@@ -1,0 +1,62 @@
+name: 🧠 ML Experiment or Dataset Task
+description: Track a machine learning experiment, model training run, or geospatial dataset ingestion.
+title: "[ML/DATA] "
+labels: ["ml", "geospatial"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this issue template to document dataset provenance, model training experiments, and metric benchmarks for EPICS Phase I.
+
+  - type: dropdown
+    id: hazard_domain
+    attributes:
+      label: Hazard Domain
+      options:
+        - "Flood Hazard (Sen1Floods11, Sentinel-1, GPM, GloFAS)"
+        - "Landslide Hazard (Landslide4Sense, Sentinel-2, SRTM DEM)"
+        - "Exposure & Vulnerability (OpenStreetMap, Population, Infrastructure)"
+        - "Multi-hazard / Joint Analysis"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dataset_provenance
+    attributes:
+      label: Dataset & Provenance
+      description: Detail the dataset sources, spatial/temporal extent, resolution, and licensing.
+      placeholder: "e.g., Sen1Floods11 v1.1, VV/VH polarizations, resolution 10m, Creative Commons CC0."
+    validations:
+      required: true
+
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Experiment Objective / Hypothesis
+      description: What model architecture, loss function, or preprocessing technique are you experimenting with?
+      placeholder: "e.g., Evaluating UNet++ with EfficientNet backbone vs standard UNet for water surface segmentation."
+    validations:
+      required: true
+
+  - type: textarea
+    id: target_metrics
+    attributes:
+      label: Target Evaluation Metrics
+      description: Target benchmarks (IoU, Dice, F1-Score, Precision, Recall).
+      placeholder: |
+        - Target IoU: > 0.75
+        - Target F1: > 0.80
+        - Target Precision: > 0.80
+        - Target Recall: > 0.80
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ML Experiment Checklist
+      options:
+        - label: Raw data tracked via DVC (not committed directly to git)
+        - label: Train/Validation/Test split clearly defined and documented
+        - label: Evaluation script outputs standard confusion matrix and segmentation metrics
+        - label: Model weights stored externally or tracked via DVC

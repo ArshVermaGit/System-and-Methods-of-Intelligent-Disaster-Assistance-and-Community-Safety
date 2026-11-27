@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Project Documentation & Architecture
+    url: https://github.com/ArshVermaGit/System-and-Methods-of-Intelligent-Disaster-Assistance-and-Community-Safety/tree/main/docs
+    about: Read project architecture, research notes, and EPICS documentation.
+  - name: 💬 Project Discussions & Q&A
+    url: https://github.com/ArshVermaGit/System-and-Methods-of-Intelligent-Disaster-Assistance-and-Community-Safety/discussions
+    about: Ask questions, discuss project ideas, and collaborate with the team.

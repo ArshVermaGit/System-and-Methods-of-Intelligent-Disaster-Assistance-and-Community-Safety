@@ -1,0 +1,60 @@
+# Labeler rules for Intelligent Disaster Assistance and Community Safety
+# Automatically categorizes PRs by matching changed files.
+
+"area:flood":
+  - changed-files:
+      - any-glob-to-any-file: 'flood/**'
+
+"area:landslide":
+  - changed-files:
+      - any-glob-to-any-file: 'landslide/**'
+
+"area:backend":
+  - changed-files:
+      - any-glob-to-any-file: 'backend/**'
+
+"area:frontend":
+  - changed-files:
+      - any-glob-to-any-file: 'frontend/**'
+
+"area:database":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'database/**'
+          - '**/*.sql'
+
+"area:data-dvc":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'data/**'
+          - '**/*.dvc'
+          - 'dvc.yaml'
+          - 'dvc.lock'
+          - '.dvc/**'
+
+"area:docs":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**'
+          - '**/*.md'
+
+"area:ci-cd":
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+
+"area:tests":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tests/**'
+          - '**/test_*.py'
+          - '**/*_test.py'
+          - '**/*.spec.ts'
+          - '**/*.test.ts'
+          - '**/*.spec.tsx'
+          - '**/*.test.tsx'
+
+"area:scripts":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'scripts/**'

@@ -1,0 +1,61 @@
+name: 💡 Feature Request
+description: Propose a new feature, module enhancement, or architectural idea.
+title: "[FEAT] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing an enhancement! Please structure your request below.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Target Component
+      description: Which area does this feature target?
+      options:
+        - "Backend (FastAPI)"
+        - "Frontend (React / MapLibre)"
+        - "Flood Module"
+        - "Landslide Module"
+        - "Geospatial / Risk Exposure Assessment"
+        - "Database & Spatial Queries"
+        - "Documentation / Research"
+        - "Tooling / Automation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What user problem, research objective, or limitation does this feature address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution / Implementation Idea
+      description: Describe your proposed design or implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative libraries, architectures, or designs you evaluated?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: tasks
+    attributes:
+      label: Proposed Milestones / Tasks
+      options:
+        - label: Research and specification defined
+        - label: Data pipeline or schema designed
+        - label: Core implementation
+        - label: Unit and integration tests added
+        - label: Documentation updated

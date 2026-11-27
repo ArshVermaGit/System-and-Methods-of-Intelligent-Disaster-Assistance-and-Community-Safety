@@ -1,0 +1,76 @@
+name: 🐛 Bug Report
+description: Create a report to help us fix a bug or issue in the pipeline or platform.
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue! Please provide as much detail as possible to help us triage and fix it quickly.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      description: Select the component where the issue occurred.
+      options:
+        - "Backend (FastAPI)"
+        - "Frontend (React / MapLibre / Leaflet)"
+        - "Flood Segmentation / Model"
+        - "Landslide Segmentation / Model"
+        - "Database (PostgreSQL / PostGIS)"
+        - "Geospatial Data Pipeline (Rasterio / GDAL / GeoPandas)"
+        - "DVC / Dataset Tracking"
+        - "CI/CD / Developer Environment"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe the problem...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Run `python ...`
+        2. Call endpoint `GET /api/...`
+        3. See error ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Traceback / Screenshots
+      description: Paste any stack traces or terminal output here.
+      render: shell
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Info
+      description: Operating System, Python version, Node version, GPU (if applicable).
+      value: |
+        - OS: [e.g. macOS / Ubuntu 22.04 / Windows 11]
+        - Python Version: [e.g. 3.10.12]
+        - Node Version: [e.g. 20.x]
+        - CUDA/GPU: [e.g. None / RTX 3060 / MPS]
+    validations:
+      required: false
