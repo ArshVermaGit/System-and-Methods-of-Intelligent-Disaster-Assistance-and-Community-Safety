@@ -1,0 +1,15 @@
+# Project Code Owners
+# Defines individuals or teams responsible for code review across modules.
+
+# Default catch-all owner
+* @ArshVermaGit
+
+# Module-specific reviews
+/flood/      @ArshVermaGit
+/landslide/  @ArshVermaGit
+/backend/    @ArshVermaGit
+/frontend/   @ArshVermaGit
+/database/   @ArshVermaGit
+/data/       @ArshVermaGit
+/docs/       @ArshVermaGit
+/.github/    @ArshVermaGit
