@@ -1,8 +1,8 @@
 # Development & Quality Tooling
 -r requirements.txt
 
-# Linting & Formatting
-ruff>=0.4.0
+# Linting & Formatting (pinned to match .pre-commit-config.yaml)
+ruff==0.4.10
 pre-commit>=3.7.0
 
 # Testing & Coverage

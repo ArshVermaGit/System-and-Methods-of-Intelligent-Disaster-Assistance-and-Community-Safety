@@ -14,6 +14,7 @@ repos:
       - id: check-yaml
         args: ['--unsafe']
       - id: check-json
+        exclude: ^frontend/tsconfig.*\.json$
       - id: check-added-large-files
         args: ['--maxkb=25000'] # 25MB max to enforce DVC usage for datasets
       - id: check-merge-conflict
