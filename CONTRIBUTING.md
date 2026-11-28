@@ -9,8 +9,8 @@ This document outlines the development workflow, coding standards, pull request 
 ## 1. Getting Started
 
 ### Prerequisites
-- Python 3.10 or 3.11
-- Node.js 18+ and npm (for frontend dashboard development)
+- Python 3.11 or 3.12
+- Node.js 24 LTS (24.15 or newer) and npm (for frontend dashboard development)
 - Git & Git LFS / DVC (Data Version Control)
 - Docker & Docker Compose (for local PostgreSQL/PostGIS setup)
 

@@ -1,0 +1,27 @@
+target-version = "py311"
+line-length = 100
+
+[lint]
+select = ["E", "F", "I", "B"]
+
+[lint.flake8-bugbear]
+extend-immutable-calls = [
+    "fastapi.Depends",
+    "fastapi.Query",
+    "fastapi.Path",
+    "fastapi.Body",
+    "fastapi.Header",
+    "fastapi.Cookie",
+    "fastapi.File",
+    "fastapi.Form",
+    "fastapi.Security",
+    "Depends",
+    "Query",
+    "Path",
+    "Body",
+    "Header",
+    "Cookie",
+    "File",
+    "Form",
+    "Security",
+]

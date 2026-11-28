@@ -58,3 +58,13 @@
   - changed-files:
       - any-glob-to-any-file:
           - 'scripts/**'
+
+"area:models":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'models/**'
+
+"area:results":
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'results/**'

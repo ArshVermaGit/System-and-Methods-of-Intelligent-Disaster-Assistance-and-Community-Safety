@@ -12,8 +12,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+/lib/
+/lib64/
 parts/
 sdist/
 var/
@@ -116,10 +116,12 @@ events.out.tfevents.*
 
 # Data directory contents (DVC managed)
 # Allow git to track the data directories and .dvc pointer files
-/data/raw/*
-/data/interim/*
-/data/processed/*
+/data/raw/**
+/data/interim/**
+/data/processed/**
+!/data/**/
 !/data/**/.gitkeep
+!/data/**/.gitignore
 !/data/**/*.dvc
 
 # DVC local storage
@@ -199,3 +201,8 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Results and runtime outputs
+/results/**
+!/results/**/
+!/results/**/README.md

@@ -48,6 +48,8 @@ A geographical platform for flood and landslide risk assessment. It brings toget
 ├── backend/       # FastAPI services
 ├── frontend/      # React dashboard
 ├── database/      # schema and migrations
+├── models/        # model checkpoints (not in git)
+├── results/       # runtime assessment outputs (not in git)
 ├── tests/
 └── scripts/
 ```
