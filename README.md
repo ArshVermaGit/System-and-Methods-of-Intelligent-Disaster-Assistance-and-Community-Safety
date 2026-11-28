@@ -1,4 +1,4 @@
-﻿# System and Methods of Intelligent Disaster Assistance and Community Safety
+# System and Methods of Intelligent Disaster Assistance and Community Safety
 
 **An Engineering Project in Community Service — Phase I**
 VIT Bhopal University, Bhopal, Madhya Pradesh – 466114
@@ -77,7 +77,6 @@ cp .env.example .env     # add credentials locally; never commit .env
 | Ayush Gupta | 24BAI10220 |
 | Arsh Verma | 24BCG10026 |
 | Reshabh Lahoti | 24BCE10343 |
-| Vanshita Patidar | 24BCE11216 |
 | Chesta Singh | 24BCE10016 |
 | Akshay Ujjwal | 24BSA10374 |
 
