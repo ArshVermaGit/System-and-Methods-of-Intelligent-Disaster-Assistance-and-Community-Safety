@@ -7,7 +7,7 @@ def test_environment_sanity():
 
 
 def test_backend_import():
-    """Verify backend main module imports without error."""
+    """Verify backend main module imports without error and has the updated title."""
     from backend.main import app
 
-    assert app.title == "Intelligent Disaster Assistance & Community Safety API"
+    assert app.title == "NIRVYX API"

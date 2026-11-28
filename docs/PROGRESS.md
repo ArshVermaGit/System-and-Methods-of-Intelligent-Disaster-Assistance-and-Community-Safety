@@ -5,7 +5,7 @@ Tracks progress across implementation steps per `AGENTS.md`.
 | Step | Branch | Status | Date | Description |
 |---|---|---|---|---|
 | 1 | `chore/step-1-foundation` | `done` | 2026-11-28 | CI, tooling, ruff/pytest config, .gitignore, .env.example, structure docs |
-| 2 | `feat/step-2-fastapi-backend` | `pending` | — | FastAPI backend |
+| 2 | `feat/step-2-backend` | `done` | 2026-11-28 | FastAPI backend architecture, settings, error hierarchy, health endpoints |
 | 3 | `feat/step-3-react-frontend` | `pending` | — | React frontend connected to backend |
 | 4 | `feat/step-4-postgis-database` | `pending` | — | PostGIS database and history API |
 | 5 | `feat/step-5-hazard-pipelines` | `pending` | — | Flood and landslide pipelines |
@@ -15,6 +15,38 @@ Tracks progress across implementation steps per `AGENTS.md`.
 | 9 | `test/step-9-system-testing` | `pending` | — | System testing and report |
 | 10 | `docs/step-10-documentation` | `pending` | — | Documentation and deliverables |
 | 11 | `model/step-11-real-models` | `pending` | — | Real model integration |
+
+---
+
+## Step 2 Details
+
+- **Date:** 2026-11-28
+- **Status:** `done`
+- **What changed:**
+  - Created `backend/app/` package structure with `core/`, `routes/`, `schemas/`, `services/`, and `database/`.
+  - Implemented `core/config.py` using `pydantic-settings`, cached singleton `get_settings()`, resolving relative paths from repo root, and loading root `.env`.
+  - Implemented `core/logging.py` for structured application logging.
+  - Implemented `core/errors.py` with `AppError` base class, domain error subclasses, and exception handlers returning standard error envelopes (`{"error": {"code": ..., "message": ..., "details": ...}}`). Tracebacks logged server-side only.
+  - Implemented Pydantic models in `schemas/` (`health.py`, `system.py`, `error.py`).
+  - Implemented API routes in `routes/` (`health.py`, `system.py`):
+    - `GET /` and `GET /health` legacy compatibility endpoints.
+    - `GET /api/health` returning `{"status": "running", "application": "NIRVYX", ...}`.
+    - `GET /api/system/info` returning diagnostic info, database status (`not_configured`), models status (`unavailable`), limits, input specs, and official disclaimer.
+  - Built `app/main.py` with title `NIRVYX API`, description, version `1.0.0`, strict CORS middleware from settings (`allow_credentials=False`), and error handlers.
+  - Converted `backend/main.py` to a compatibility shim.
+  - Added `backend/requirements.txt` pointing to `-r ../requirements.txt`.
+  - Updated `backend/README.md` with instructions to run from repo root.
+  - Created `tests/backend/test_api.py` covering all endpoints, 404, 422, CORS, and fresh startup; updated `tests/test_health.py` with new API title assertion.
+- **Checks run:**
+  - `ruff check .`: Passed (0 errors)
+  - `ruff format --check .`: Passed (24 files formatted)
+  - `pytest`: Passed (11 passed in 0.24s)
+  - Live server verification:
+    - `curl http://127.0.0.1:8000/api/health` -> HTTP 200 `{"status":"running","application":"NIRVYX",...}`
+    - `curl http://127.0.0.1:8000/docs` -> HTTP 200
+  - `pre-commit run --all-files`: Passed (all hooks green)
+- **Open items / Hand-off:**
+  - Arsh to push `feat/step-2-backend` and open PR to merge into `main`.
 
 ---
 
